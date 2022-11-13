@@ -2,8 +2,9 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.2</PackageVersion>
+    <PackageVersion>1.0.3</PackageVersion>
     <PackageId>HTLLeonding.Utility.Templates</PackageId>
+	<PackageReadmeFile>readme.md</PackageReadmeFile>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>HTL Leonding C# Templates</Title>
     <Authors>M. Haslinger</Authors>
