@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <PackageType>Template</PackageType>
-    <PackageVersion>1.0.3</PackageVersion>
+    <PackageVersion>1.0.4</PackageVersion>
     <PackageId>HTLLeonding.Utility.Templates</PackageId>
 	<PackageReadmeFile>readme.md</PackageReadmeFile>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <Content Include="templates\**\*" Exclude="templates\**\bin\**;templates\**\obj\**" />
+	<Content Include="readme.md" />
     <Compile Remove="**\*" />
   </ItemGroup>
 
