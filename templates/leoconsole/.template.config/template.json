@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "M. Haslinger",
+  "classifications": [ "Common", "Console" ],
+  "identity": "HTLLeonding.ConsoleTemplate.CSharp",
+  "name": "HTL Leonding Console Application",
+  "shortName": "leoconsole",
+  "tags": {
+	"language": "C#"
+  },
+  "sourceName": "LeoConsole"
+}
