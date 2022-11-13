@@ -1,6 +1,6 @@
 # HTL Leonding .NET/C# Project Templates
 
-Used to create projects for assignments.
+Used to create projects for assignments [@HTL Leonding](https://www.htl-leonding.at/).
 
 ## Installation
 
