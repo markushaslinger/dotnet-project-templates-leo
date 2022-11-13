@@ -4,6 +4,7 @@
     <PackageType>Template</PackageType>
     <PackageVersion>1.0</PackageVersion>
     <PackageId>HTLLeonding.Utility.Templates</PackageId>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>HTL Leonding C# Templates</Title>
     <Authors>M. Haslinger</Authors>
     <Description>Templates to use when creating an application for an exercise at HTL Leonding.</Description>
