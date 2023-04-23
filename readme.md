@@ -20,8 +20,10 @@ Console Application
 
 - Main project + unit test project
     - With solution file
+    - Optional `--tests false` flag can be added to _not_ generate a unit test project
 - Includes .gitignore file
+- Includes .editorconfig file
 
-> Syntax: `dotnet new leoconsole -n <ASSIGNMNET_NAME> -o .`
+> Syntax: `dotnet new leoconsole -n <ASSIGNMNET_NAME> -o . [--tests false]`
 
 > Example: `dotnet new leoconsole -n VendingMachine -o .`
