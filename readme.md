@@ -21,6 +21,7 @@ Console Application
 - Main project + unit test project
     - With solution file
 - Includes .gitignore file
+- Includes .editorconfig file
 
 > Syntax: `dotnet new leoconsole -n <ASSIGNMNET_NAME> -o .`
 
