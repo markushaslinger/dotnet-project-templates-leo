@@ -6,15 +6,28 @@
   "name": "HTL Leonding Console Application",
   "shortName": "leoconsole",
   "tags": {
+    "type": "solution",
 	  "language": "C#"
   },
   "symbols": {
-    "notests": {
+    "tests": {
       "type": "parameter",
       "datatype": "bool",
-      "defaultValue": "false",
+      "defaultValue": "true",
       "description": "Do not create a unit test project"
     }
   },
+  "sources": [
+    {
+      "modifiers": [
+        {
+          "condition": "(!tests)",
+          "exclude": [
+            "LeoConsole.Test/**"
+          ]
+        }
+      ]
+    }
+  ],
   "sourceName": "LeoConsole"
 }
