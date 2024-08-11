@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "M. Haslinger",
+  "classifications": [ "Common", "WebApi" ],
+  "identity": "HTLLeonding.MinmalApiTemplate.CSharp",
+  "name": "HTL Leonding Minimal API Application",
+  "shortName": "leominiapi",
+  "tags": {
+    "type": "solution",
+	  "language": "C#"
+  },
+  "sourceName": "LeoMiniApi"
+}
