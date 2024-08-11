@@ -27,3 +27,23 @@ Console Application
 > Syntax: `dotnet new leoconsole -n <ASSIGNMNET_NAME> -o . [--tests false]`
 
 > Example: `dotnet new leoconsole -n VendingMachine -o .`
+
+### `leominiapi`
+
+Minimal WebAPI (REST) Application
+
+- Main project, with:
+    - Basic libraries
+    - JSON Serializer Configuration
+    - Prepared DI setup
+    - A single demo endpoint
+    - OpenApi
+- Meant for development/container internal use (no HTTPS)
+- Includes a `http` requests file with sample requests
+- Includes .gitignore file
+- Includes .editorconfig file
+- By default binds to port 5200
+
+> Syntax: `dotnet new leominiapi -n <ASSIGNMENT_NAME> -o .`
+
+> Example: `dotnet new leominiapi -n PoolGuard -o .`
