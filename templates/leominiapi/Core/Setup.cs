@@ -18,6 +18,7 @@ public static class Setup
             options.SerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
             options.SerializerOptions.WriteIndented = isDevelopment;
             options.SerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
+            options.SerializerOptions.Converters.Add(new JsonStringEnumConverter());
             options.SerializerOptions.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
         });
     }
