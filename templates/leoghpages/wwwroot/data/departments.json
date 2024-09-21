@@ -1,0 +1,28 @@
+﻿[
+  {
+    "id": 1,
+    "name": "Höhere Abteilung für Informatik",
+    "programs": [
+      "School of Software Engineering",
+      "Computer Science International"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Höhere Abteilung für IT-Medientechnik",
+    "programs": []
+  },
+  {
+    "id": 3,
+    "name": "Abteilung für Elektronik und Technische Informatik",
+    "programs": [
+      "Höhere Abteilung",
+      "Fachschule"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Höhere Abteilung für Medizintechnik",
+    "programs": []
+  }
+]

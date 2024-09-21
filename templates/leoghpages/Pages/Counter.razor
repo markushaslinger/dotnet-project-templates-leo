@@ -1,0 +1,26 @@
+﻿@page "/counter"
+
+<PageTitle>Counter</PageTitle>
+
+<h2>Counter</h2>
+
+<p role="status">Current count: @_currentCount</p>
+
+<button class="btn btn-primary" @onclick="IncrementCount">Click me (+@_increment)</button>
+
+@code {
+    private const int MinIncrement = 1;
+    private const int MaxIncrement = 10;
+    private int _increment = MinIncrement;
+    private int _currentCount;
+
+    private void IncrementCount()
+    {
+        _currentCount += _increment++;
+        
+        if(_increment >= MaxIncrement)
+        {
+            _increment = MinIncrement;
+        }
+    }
+}

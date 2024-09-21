@@ -47,3 +47,23 @@ Minimal WebAPI (REST) Application
 > Syntax: `dotnet new leominiapi -n <ASSIGNMENT_NAME> -o .`
 
 > Example: `dotnet new leominiapi -n PoolGuard -o .`
+
+### `leoblazorpages`
+
+Blazor WASM Application for GitHub Pages deployment
+
+- A simple, single project Blazor WASM template
+- Set up to be easily deployed to GitHub Pages with very little manual configuration
+    - Pages has to be enabled in GitHub, instructions are in the template readme
+- Demonstrates:
+    - Dynamic content and events (buttons)
+    - Loading data via HTTP request and showing it in a table
+    - CSS isolation
+- Includes .gitignore
+- Includes .editorconfig file
+- By default binds to port 5250
+- HTTPS config removed on purposes (will be HTTPS on GH Pages) to keep the first steps simpler
+
+> Syntax: `dotnet new leoblazorpages -n <ASSIGNMENT_NAME> -o .`
+
+> Example: `dotnet new leoblazorpages -n HerbalGarden -o .`

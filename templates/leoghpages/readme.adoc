@@ -1,0 +1,19 @@
+﻿= LeoPages
+
+Allows to easily deploy a Blazor WASM application to GitHub Pages.
+
+== Initial Setup
+
+IMPORTANT: Make sure to use a `public` repository or be a GitHub Pro user, otherwise the Pages feature is not available and the action run will fail.
+
+. Create the project using the template
+. Create a git repository and add/commit the initial project
+. Create a new repository on GitHub
+. Configure the GitHub repository as remote
+. Push the project to the GitHub repository
+** The action defined in the workflows should execute automatically
+. *Make sure to enable Pages in the GitHub repository settings by selecting the gh-pages branch (root) and _saving_*
+
+== Further Changes
+
+Once the initial setup works, you can make any changes or additions to the blazor application, commit and push again, and the deployed pages will be updated automatically.

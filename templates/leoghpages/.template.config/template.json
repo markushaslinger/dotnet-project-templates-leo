@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "M. Haslinger",
+  "classifications": [ "Blazor", "StaticWebsite", "GH-Pages" ],
+  "identity": "HTLLeonding.BlazorPagesTemplate.CSharp",
+  "name": "HTL Leonding Blazor Pages Application",
+  "shortName": "leoblazorpages",
+  "tags": {
+    "type": "project",
+	  "language": "C#"
+  },
+  "sourceName": "LeoPages"
+}
