@@ -14,6 +14,8 @@ IMPORTANT: Make sure to use a `public` repository or be a GitHub Pro user, other
 ** The action defined in the workflows should execute automatically
 . *Make sure to enable Pages in the GitHub repository settings by selecting the gh-pages branch (root) and _saving_*
 
+CAUTION: If the repository is owned by an organization (classrooms!) the organization administrator has to enable read & write access for actions in the _organization_ settings, otherwise the bot is not allowed to create the `gh-pages` branch!
+
 == Further Changes
 
 Once the initial setup works, you can make any changes or additions to the blazor application, commit and push again, and the deployed pages will be updated automatically.
