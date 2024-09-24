@@ -62,7 +62,7 @@ Blazor WASM Application for GitHub Pages deployment
 - Includes .gitignore
 - Includes .editorconfig file
 - By default binds to port 5250
-- HTTPS config removed on purposes (will be HTTPS on GH Pages) to keep the first steps simpler
+- HTTPS config removed on purpose (will be HTTPS on GH Pages) to keep the first steps simpler
 - **If the repository is owned by an organization (classrooms!) the organization admin has to enable read & write access for actions in the organization settings, otherwise the bot is not allowed to create the `gh-pages` branch!**
 
 > Syntax: `dotnet new leoblazorpages -n <ASSIGNMENT_NAME> -o .`
