@@ -28,6 +28,32 @@ Console Application
 
 > Example: `dotnet new leoconsole -n VendingMachine -o .`
 
+### `leowebapi`
+
+WebAPI (REST) Application
+
+- Includes:
+  - Startup project with controller
+  - Core project with business logic & services
+  - Persistence project with data access
+  - Shared project with utility classes
+  - Unit test project
+  - Integration test project (WebApplicationFactory & Testcontainers)
+- Demonstrates fully configured application with DI, logging (Serilog), application settings, testing & UOW based data access
+  - Sample entities can be easily replaced, while configuration should be a good default for most projects 
+- Includes a `.http` requests file with sample requests
+- Migrations can be managed via provided script 
+- Includes .gitignore & .editorconfig files
+- Includes a basic GH actions workflow for CI
+- By default binds to port 5200
+- Assumes a PostgreSQL database, but can be easily replaced with other providers
+- Contains no auth on purpose (should be handled via dedicated OIDC provider)
+  - Also is set up only for HTTP, since SSL termination should be handled by a reverse proxy 
+
+> Syntax: `dotnet new leowebapi -n <ASSIGNMNET_NAME> -o .`
+
+> Example: `dotnet new leowebapi -n Rockets -o .`
+
 ### `leominiapi`
 
 Minimal WebAPI (REST) Application
