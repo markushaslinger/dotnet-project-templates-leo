@@ -8,13 +8,15 @@ namespace LeoWebApi.TestInt;
 
 public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBase(webApiFixture)
 {
+    // Note: make sure you have created a migration before running the tests!
+    
     [Fact]
     public async Task GetAllRockets_ExistingRockets_Success()
     {
         const string Manufacturer1 = "Blue Origin";
         const string ModelName1 = "New Shepard";
-        const string Manufacturer2 = "SpaceX";
-        const string ModelName2 = "Falcon 9";
+        const string Manufacturer2 = "JAXA";
+        const string ModelName2 = "H-IIA";
 
         await ModifyDatabaseContent(async ctx =>
         {
@@ -29,8 +31,8 @@ public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBas
             {
                 Manufacturer = Manufacturer2,
                 ModelName = ModelName2,
-                MaxThrust = 1_800_000,
-                PayloadDeltaV = 22_800_000
+                MaxThrust = 1_500_000,
+                PayloadDeltaV = 36_000_000
             });
 
             await ctx.SaveChangesAsync();

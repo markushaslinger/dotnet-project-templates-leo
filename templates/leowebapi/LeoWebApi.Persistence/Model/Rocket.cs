@@ -7,5 +7,4 @@ public class Rocket
     public required string Manufacturer { get; set; }
     public double MaxThrust { get; set; }
     public long PayloadDeltaV { get; set; }
-    public Launch? Launch { get; set; }
 }
