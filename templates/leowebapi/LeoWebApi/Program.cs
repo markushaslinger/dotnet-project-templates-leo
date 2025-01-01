@@ -1,6 +1,7 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using LeoWebApi;
+using LeoWebApi.Shared;
 using LeoWebApi.Util;
 using Microsoft.AspNetCore.Mvc;
 using NodaTime.Serialization.SystemTextJson;
@@ -37,14 +38,7 @@ return;
 
 static void ConfigureJsonSerialization(JsonOptions options, bool isDev)
 {
-    var serializerOptions = options.JsonSerializerOptions;
-    serializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.Never;
-    serializerOptions.PropertyNameCaseInsensitive = true;
-    serializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
-    serializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
-    serializerOptions.Converters.Add(new JsonStringEnumConverter());
-    serializerOptions.WriteIndented = isDev;
-    serializerOptions.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
+    JsonConfig.ConfigureJsonSerialization(options.JsonSerializerOptions, isDev);
 }
 
 // used for integration testing

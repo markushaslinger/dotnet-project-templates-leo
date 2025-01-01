@@ -1,10 +1,21 @@
-using LeoWebApi.Persistence;
+using System.Text.Json;
 using LeoWebApi.Persistence.Util;
+using LeoWebApi.Shared;
 
 namespace LeoWebApi.TestInt.Util;
 
 public abstract class WebApiTestBase(WebApiTestFixture webApiFixture) : IClassFixture<WebApiTestFixture>, IAsyncLifetime
 {
+    private static readonly Lazy<JsonSerializerOptions> jsonOptions = new(() =>
+    {
+        var options = new JsonSerializerOptions(JsonSerializerOptions.Web);
+        JsonConfig.ConfigureJsonSerialization(options, false);
+
+        return options;
+    });
+
+    protected static JsonSerializerOptions JsonOptions => jsonOptions.Value;
+
     protected HttpClient ApiClient => webApiFixture.Client;
 
     public async Task InitializeAsync()
