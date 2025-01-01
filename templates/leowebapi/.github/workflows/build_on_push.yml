@@ -1,0 +1,42 @@
+name: .NET Build, Test & Publish
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build_test_publish:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: 'LeoWebApi'
+    steps:
+      - uses: actions/checkout@v4
+      - name: setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 9.0.x
+      - name: restore dependencies
+        run: dotnet restore
+      - name: build
+        run: dotnet build --no-restore
+      - name: test
+        run: dotnet test --filter "Category!=SkipOnGitHubActions" --no-build --verbosity normal
+      - name: publish
+        run: dotnet publish -c Release -r linux-x64 -o release --self-contained true
+        working-directory: ${{env.APP_DIR}}
+      - name: zip deployment
+        run: zip -r LeoWebApi.zip ./*
+        working-directory: ${{env.APP_DIR}}/release
+
+      - name: prepare artifact directories
+        run: mkdir -p Artifacts
+      - name: copy binaries to artifact directories
+        run: cp -r LeoWebApi/release/LeoWebApi.zip Artifacts/LeoWebApi.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: LeoWebApi
+          path: Artifacts
+          retention-days: 1

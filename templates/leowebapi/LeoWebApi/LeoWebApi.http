@@ -1,0 +1,69 @@
+@Host = http://localhost:5200
+
+# Execute in order for variables (with IDs) to work correctly
+
+### Add rocket
+POST {{Host}}/api/rockets
+Content-Type: application/json
+
+{
+    "modelName": "Ariane 5",
+    "manufacturer": "Arianespace",
+    "maxThrust": "13700000",
+    "payloadDeltaV": "205800000"
+}
+
+> {%
+    client.global.set("rocketId", response.body.id);
+%}
+
+### Get rocket by ID
+GET {{Host}}/api/rockets/{{rocketId}}
+
+### Get all rockets
+GET {{Host}}/api/rockets
+
+### Plan launch
+POST {{Host}}/api/launches
+Content-Type: application/json
+
+{
+  "plannedLaunchDate": "2025-01-06",
+  "launchSite": "Kourou",
+  "customer": "HTL Leonding",
+  "rocketId": "{{rocketId}}"
+}
+
+> {%
+    client.global.set("launchId", response.body.id);
+%}
+
+### Get future launches
+GET {{Host}}/api/launches/future
+
+### Add payload
+POST {{Host}}/api/launches/{{launchId}}/payload
+Content-Type: application/json
+
+{
+    "description": "Franklyn SpySat",
+    "weight": "1082.45",
+    "type": "satellite",
+    "destination": "GeostationaryOrbit"
+}
+
+> {%
+    client.global.set("payloadId", response.body.id);
+%}
+
+### Get payload by ID
+GET {{Host}}/api/launches/{{launchId}}/payload/{{payloadId}}
+
+### Get launch by ID
+GET {{Host}}/api/launches/{{launchId}}
+
+### Delete rocket
+DELETE {{Host}}/api/rockets/{{rocketId}}
+
+### Get future launches - should be empty if rocket is deleted and there are no other launches
+GET {{Host}}/api/launches/future
