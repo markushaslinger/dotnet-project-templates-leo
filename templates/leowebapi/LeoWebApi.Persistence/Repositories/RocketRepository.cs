@@ -11,7 +11,7 @@ public interface IRocketRepository
     public void RemoveRocket(Rocket rocket);
 }
 
-internal readonly struct RocketRepository(DbSet<Rocket> rocketSet) : IRocketRepository
+internal sealed class RocketRepository(DbSet<Rocket> rocketSet) : IRocketRepository
 {
     private IQueryable<Rocket> Rockets => rocketSet;
     private IQueryable<Rocket> RocketsNoTracking => Rockets.AsNoTracking();
