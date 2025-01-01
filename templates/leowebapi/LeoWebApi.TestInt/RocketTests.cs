@@ -18,7 +18,7 @@ public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBas
         const string Manufacturer2 = "JAXA";
         const string ModelName2 = "H-IIA";
 
-        await ModifyDatabaseContent(async ctx =>
+        await ModifyDatabaseContentAsync(async ctx =>
         {
             ctx.Rockets.Add(new Rocket
             {

@@ -9,7 +9,7 @@ public abstract class WebApiTestBase(WebApiTestFixture webApiFixture) : IClassFi
 
     public async Task InitializeAsync()
     {
-        await webApiFixture.RestoreDatabase(ImportSeedData);
+        await webApiFixture.RestoreDatabaseAsync(ImportSeedDataAsync);
     }
 
     public Task DisposeAsync()
@@ -19,14 +19,14 @@ public abstract class WebApiTestBase(WebApiTestFixture webApiFixture) : IClassFi
         return Task.CompletedTask;
     }
 
-    protected virtual ValueTask ImportSeedData(DatabaseContext context)
+    protected virtual ValueTask ImportSeedDataAsync(DatabaseContext context)
     {
         // add seed data for all tests here if needed, override in derived classes to add test class specific seed data
         return ValueTask.CompletedTask;
     }
 
-    protected async ValueTask ModifyDatabaseContent(Func<DatabaseContext, ValueTask> modifier)
+    protected async ValueTask ModifyDatabaseContentAsync(Func<DatabaseContext, ValueTask> modifier)
     {
-        await webApiFixture.ModifyDatabaseContent(modifier);
+        await webApiFixture.ModifyDatabaseContentAsync(modifier);
     }
 }
