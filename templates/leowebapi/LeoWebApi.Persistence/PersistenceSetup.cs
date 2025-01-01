@@ -20,11 +20,11 @@ public static class PersistenceSetup
         services.AddScoped<ITransactionProvider, UnitOfWork>();
     }
 
-    private static void ConfigureDatabase(IServiceCollection services, IConfigurationManager configurationManager,
+    private static void ConfigureDatabase(IServiceCollection services, IConfiguration configuration,
                                           bool isDev)
     {
-        var connectionString = configurationManager.GetConnectionString(ConnectionStringName)
-            ?? throw new InvalidOperationException("Connection string not found");
+        string connectionString = configuration.GetConnectionString(ConnectionStringName)
+                                  ?? throw new InvalidOperationException("Connection string not found");
         services.AddDbContext<DatabaseContext>(optionsBuilder =>
         {
             ConfigureDatabaseContextOptions(optionsBuilder, connectionString, isDev);

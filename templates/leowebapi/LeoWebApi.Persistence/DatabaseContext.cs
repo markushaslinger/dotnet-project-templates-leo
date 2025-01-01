@@ -1,5 +1,6 @@
 using LeoWebApi.Persistence.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
@@ -29,7 +30,7 @@ public sealed class DatabaseContext(DbContextOptions<DatabaseContext> options) :
 
     private static void ConfigureRocket(ModelBuilder modelBuilder)
     {
-        var rocket = modelBuilder.Entity<Rocket>();
+        EntityTypeBuilder<Rocket> rocket = modelBuilder.Entity<Rocket>();
         rocket.HasKey(r => r.Id);
         rocket.Property(r => r.Id).ValueGeneratedOnAdd();
     }

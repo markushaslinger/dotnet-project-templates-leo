@@ -34,7 +34,7 @@ internal sealed class RocketService(IUnitOfWork uow) : IRocketService
 
     public async ValueTask<IReadOnlyCollection<Rocket>> GetAllRocketsAsync()
     {
-        var rockets = await uow.RocketRepository.GetAllRocketsAsync(false);
+        IReadOnlyCollection<Rocket> rockets = await uow.RocketRepository.GetAllRocketsAsync(false);
 
         return rockets;
     }

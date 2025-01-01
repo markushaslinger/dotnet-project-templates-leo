@@ -33,16 +33,16 @@ internal readonly struct RocketRepository(DbSet<Rocket> rocketSet) : IRocketRepo
 
     public async ValueTask<IReadOnlyCollection<Rocket>> GetAllRocketsAsync(bool tracking)
     {
-        var source = tracking ? Rockets : RocketsNoTracking;
+        IQueryable<Rocket> source = tracking ? Rockets : RocketsNoTracking;
 
-        var rockets = await source.ToListAsync();
+        List<Rocket> rockets = await source.ToListAsync();
 
         return rockets;
     }
 
     public async ValueTask<Rocket?> GetRocketByIdAsync(int id, bool tracking)
     {
-        var source = tracking ? Rockets : RocketsNoTracking;
+        IQueryable<Rocket> source = tracking ? Rockets : RocketsNoTracking;
 
         var rocket = await source.FirstOrDefaultAsync(r => r.Id == id);
 
