@@ -39,7 +39,7 @@ WebAPI (REST) Application
   - Shared project with utility classes
   - Unit test project
   - Integration test project (WebApplicationFactory & Testcontainers)
-- Demonstrates fully configured application with DI, logging (Serilog), application settings, testing & UOW based data access
+- Demonstrates fully configured application with validation, DI, logging (Serilog), application settings, testing & UOW based data access
   - Sample entities can be easily replaced, while configuration should be a good default for most projects 
 - Includes a `.http` requests file with sample requests
 - Migrations can be managed via provided script 
@@ -47,8 +47,11 @@ WebAPI (REST) Application
 - Includes a basic GH actions workflow for CI
 - By default binds to port 5200
 - Assumes a PostgreSQL database, but can be easily replaced with other providers
-- Contains no auth on purpose (should be handled via dedicated OIDC provider)
-  - Also is set up only for HTTP, since SSL termination should be handled by a reverse proxy 
+- Does _not_ include:
+  - Auth: should be handled via dedicated OIDC provider and explained in an explicit assignment
+  - HTTPS: SSL termination should be handled by a reverse proxy when deployed
+  - Swagger-UI: No longer part of the official template and also not needed when a `.http` file exists
+  - Dockerfile: deployment should be explained separately
 
 > Syntax: `dotnet new leowebapi -n <ASSIGNMNET_NAME> -o .`
 
