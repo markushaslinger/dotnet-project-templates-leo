@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Diagnostics;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace LeoWebApi.Persistence;
+namespace LeoWebApi.Persistence.Util;
 
 public static class PersistenceSetup
 {

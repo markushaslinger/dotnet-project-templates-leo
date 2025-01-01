@@ -3,7 +3,7 @@ using LeoWebApi.Persistence.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace LeoWebApi.Persistence;
+namespace LeoWebApi.Persistence.Util;
 
 public interface ITransactionProvider : IAsyncDisposable, IDisposable
 {

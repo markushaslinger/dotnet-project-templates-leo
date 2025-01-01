@@ -1,6 +1,7 @@
 using LeoWebApi.Core.Logic;
 using LeoWebApi.Persistence;
 using LeoWebApi.Persistence.Model;
+using LeoWebApi.Persistence.Util;
 using OneOf;
 using OneOf.Types;
 
