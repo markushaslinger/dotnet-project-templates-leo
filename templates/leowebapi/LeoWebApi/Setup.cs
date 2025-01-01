@@ -69,6 +69,3 @@ public static class Setup
         });
     }
 }
-
-// used for integration testing
-public partial class Program { }

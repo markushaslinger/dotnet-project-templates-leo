@@ -46,3 +46,6 @@ static void ConfigureJsonSerialization(JsonOptions options, bool isDev)
     serializerOptions.WriteIndented = isDev;
     serializerOptions.ConfigureForNodaTime(DateTimeZoneProviders.Tzdb);
 }
+
+// used for integration testing
+public partial class Program { }
