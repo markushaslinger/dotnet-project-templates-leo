@@ -25,4 +25,4 @@ jobs:
     - name: Pack
       run: dotnet pack --output nupkgs
     - name: Publish
-      run: dotnet nuget push nupkgs/*.nupkg --source 'https://api.nuget.org/v3/index.json' --apiKey ${{secrets.NUGET_API_KEY}}
+      run: dotnet nuget push nupkgs/*.nupkg --source 'https://api.nuget.org/v3/index.json' --api-key ${{secrets.NUGET_API_KEY}}
