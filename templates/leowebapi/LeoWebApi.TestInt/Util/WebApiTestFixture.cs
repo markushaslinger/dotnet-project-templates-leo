@@ -34,8 +34,8 @@ public sealed class WebApiTestFixture : IAsyncLifetime
     {
         await _postgresContainer.StartAsync();
 
-        _factory = new WebAppFactory(_postgresContainer.GetConnectionString());
-        Client = _factory.CreateClient();
+        Factory = new WebAppFactory(_postgresContainer.GetConnectionString());
+        Client = Factory.CreateClient();
     }
 
     public async Task DisposeAsync()

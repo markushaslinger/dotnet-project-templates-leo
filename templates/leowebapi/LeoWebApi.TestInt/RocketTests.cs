@@ -41,7 +41,7 @@ public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBas
         var response = await ApiClient.GetAsync("api/rockets");
 
         response.StatusCode.Should().Be(HttpStatusCode.OK);
-        var content = await response.Content.ReadFromJsonAsync<AllRocketsResponse>();
+        var content = await response.Content.ReadFromJsonAsync<AllRocketsResponse>(JsonOptions);
 
         content.Should().NotBeNull();
         content!.Rockets.Should().NotBeEmpty()
@@ -64,7 +64,7 @@ public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBas
             ModelName = ModelName,
             MaxThrust = MaxThrust,
             PayloadDeltaV = PayloadDeltaV
-        });
+        }, JsonOptions);
 
         response.StatusCode.Should().Be(HttpStatusCode.Created);
         response.Headers.Location.Should().NotBeNull();
@@ -74,7 +74,7 @@ public sealed class RocketTests(WebApiTestFixture webApiFixture) : WebApiTestBas
         ValidateRocket(content!);
 
         response = await ApiClient.GetAsync("api/rockets");
-        var allRocketsContent = await response.Content.ReadFromJsonAsync<AllRocketsResponse>();
+        var allRocketsContent = await response.Content.ReadFromJsonAsync<AllRocketsResponse>(JsonOptions);
 
         allRocketsContent.Should().NotBeNull();
         allRocketsContent!.Rockets.Should().NotBeEmpty()
